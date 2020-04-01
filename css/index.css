@@ -1,0 +1,152 @@
+@charset "utf-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,body{width: 100%;height:100%;}
+body{
+	font-family: "microsoft yahei",arial;
+	font-size:14px;
+	color:#fff;
+	background: url(../img/indexbg.jpg) no-repeat center;
+	background-size:cover;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6{font-weight: normal;padding:0;margin:0;}
+a,a:hover,a:link,a:active,a:visited{text-decoration: none;color:#fff;}
+
+/*阴影遮罩*/
+.zhegai {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.zhegai.active .shadow{
+	position: absolute;
+	top: 0;
+	width: 50%;
+	-webkit-transition: -webkit-transform 1s;
+	transition: transform 1s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	height: 100%;
+	}
+          
+.kjleft{
+	left: 0;
+  -webkit-transform: translate3d(-32.4vh, 100%, 0);
+          transform: translate3d(-32.4vh, 100%, 0);
+          }
+.kjright{
+	left: 50%;
+  -webkit-transform: translate3d(32.4vh, -100%, 0);
+          transform: translate3d(32.4vh, -100%, 0);
+          }
+.kjleft .page_lr{
+	    left: -40%;
+}
+.kjright .page_lr{
+	    right: -40%;
+}
+.page_lr{
+	     overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 140%;
+  height: 100%;
+  -webkit-transform: skewX(-18deg);
+      -ms-transform: skewX(-18deg);
+          transform: skewX(-18deg);
+          
+}       
+
+.reback{
+	width: 100%;
+	height: 100%;
+	-webkit-transform: skewX(18deg);
+	-ms-transform: skewX(18deg);
+	transform: skewX(18deg);
+	-webkit-transition: -webkit-transform 1s, opacity 1s;
+	transition: transform 1s, opacity 1s;
+}
+
+.page_lr.cur{background: #000; opacity: 0.5;filter:Alpha(opacity=50);}
+
+/*中间图片*/
+.content{width:50%;float:left;height:100%;z-index:10;position:relative;}
+.shouji{width: 100%;text-align: center;height:70%;overflow: hidden;position:relative;}
+.shouji .sb{position: absolute;bottom:0;left:0;width:100%;}
+.shouji img{max-width:398px;transition:all 0.8s; -ms-transition:all 0.8s; -moz-transition:all 0.8s; -webkit-transition:all 0.8s; -o-transition:all 0.8s;}
+.diannao img{max-width:749px;}
+
+/*底部按钮*/
+.footer{height:30%;width: 100%;clear: both;}
+
+.hoverleft .btnbox,.hoverright .btnbox{padding-top:5%;margin:0 auto;}
+.hoverleft .btnbox img,.hoverright .btnbox img{margin:0 auto;}
+.hoverleft .btnbox .img2,.hoverright .btnbox .img2{display:none;}
+
+.hoverleft:hover .sb img{padding-bottom:1%;}
+.hoverright:hover .sb  img{padding-bottom:1%;}
+
+
+/*弹窗*/
+.outshadow{width:100%;height:100%;position:absolute;z-index:50;display:none;}
+.popup{position: absolute;top:50%;left:50%;width:500px;height:200px;background:url(../img/popup.png) no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;margin-left: -250px;margin-top: -100px;z-index: 100;}
+.popup h3{font-size:2em;padding-top: 5%;letter-spacing: 5px;}
+.popup .popbt{text-align: center;width: 35%;display: inline-block;}
+.popup .popbt .pop_btn{width:133px;background:url(../img/btn1.png) no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;display:inline-block;font-size:2em;letter-spacing: 7px;text-align:center;padding: 3% 0;margin-top: 25%;margin-bottom: 25%;}
+.popup .popbt .give_up{background:url(../img/btn2.png) no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;}
+
+/*VS*/
+.vs{width:160px;height:215px;background: url(../img/VS.png) no-repeat;position: absolute;top:50%;left:50%;margin-top:-80px;margin-left: -107px;z-index:1;}
+
+.skw-page__skewed:hover,.skw-page__skewed:hover{ background: #000; opacity: 0.5;}
+
+@media only screen and (max-width:1600px ) {
+	.shouji img{width:40%;}
+	.diannao img{width:70%;}
+
+	.footer .btnbox{width:50%;}
+	.footer .btnbox h2{font-size:2.2em;}
+	.footer .btnbox .bt{font-size:1.5em;padding:3% 0;}
+	.footer .btnbox .bt img.logo{height:40px;}
+}
+
+@media only screen and (max-width:1400px ) {
+	.footer .btnbox h2{font-size:1.9em;}
+	.footer .btnbox .bt{font-size:1.4em;padding:3% 0;}
+	.footer .btnbox .bt img.logo{height:36px;}
+	
+	
+}
+
+@media only screen and (max-width:1280px ) {
+	.footer .btnbox h2{font-size:1.6em;}
+	.footer .btnbox .bt{font-size:1.1em;padding:3% 0;}
+	.footer .btnbox .bt img.logo{height:30px;}
+}
+@media only screen and (max-width:1080px ) {
+	.footer .btnbox h2{font-size:1.4em;}
+	.footer .btnbox .bt{font-size:1em;padding:3% 0;}
+	.footer .btnbox .bt img.logo{height:28px;}
+}
+
+@media only screen and (max-width:1024px ) {
+	.footer .btnbox h2{font-size:1.2em;}
+	.footer .btnbox .bt{font-size:0.87em;padding:3% 0;}
+	.footer .btnbox .bt img.logo{height:25px;}
+	
+	.popup{width:250px;height:100px;margin-left: -125px;margin-top: -50px;}
+.popup h3{font-size:1.1em;padding-top: 5%;letter-spacing: 2px;}
+.popup .popbt{text-align: center;width: 35%;display: inline-block;}
+.popup .popbt .pop_btn{width:60px;font-size:1em;letter-spacing: 3px;padding: 3% 0;margin-top: 25%;margin-bottom: 25%;}
+}
